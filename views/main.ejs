@@ -10,9 +10,18 @@
   <body>
     <h1>Articles!</h1>
     <% articles.forEach(article => { %>
-    <div class="card">
-      <div class="container"><a href=<%= article.path %>> <%= article.title %></div>
+      <div class="stripe long"></div>
+    <div class="article">
+      <p class="article-title">
+        <a href=<%= article.path %> ><%= article.title %> </a>
+      </p>
+      <p>
+        <%= article.desc %>
+      </p>
+      </div>
     </div>
+    <p><%= article.date %></p>
+    <div class="stripe long"></div>
     <% }) %>
   </body>
   <style>
@@ -33,6 +42,25 @@
       box-shadow: 0 4px 8px 0 #368af8;
       transition: 0.3s;
       border-radius: 5px; /* 5px rounded corners */
+    }
+
+    .article-title {
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .stripe {
+      display: block;
+      max-width: 128px;
+      height: 10px;
+      border-radius: 1px;
+      background-color: #368af8;
+      margin-bottom: 15px;
+    }
+    .stripe.long {
+      max-width: 100%;
+      width: 100%;
+      height: 3px;
     }
 
     a {

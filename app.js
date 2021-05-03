@@ -13,6 +13,14 @@ const articles = [
     id: "welcome.md",
     desc: "A short welcome to this blog!",
     path: "articles/welcome.md",
+    date: "2021-5-2",
+  },
+  {
+    title: "Getting started with Docker",
+    id: "docker.md",
+    desc: "A short intro to Docker",
+    path: "articles/docker.md",
+    date: "2021-5-3",
   },
 ];
 
@@ -33,6 +41,11 @@ articlesarr.forEach((article) => {
     const result = articles.filter((a) => {
       return a.id === article.toString();
     });
-    res.render("article", { content: content, title: result[0].title });
+    res.render("article", {
+      content: content,
+      title: result[0].title,
+      date: result[0].date,
+      desc: result[0].desc,
+    });
   });
 });
