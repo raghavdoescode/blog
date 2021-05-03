@@ -5,6 +5,8 @@ const marked = require("marked");
 
 const app = express();
 
+app.use("/public", express.static("public"));
+
 const articles = [
   {
     title: "Welcome",
